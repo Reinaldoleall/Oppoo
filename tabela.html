@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Vendas - Agosto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="excel-container">
+        <!-- Tabela de Resultados -->
+        <div class="table-container">
+            <table id="salesTable">
+                <thead>
+                    <tr>
+                        <th>Vendedor</th>
+                        <th>A58</th>
+                        <th>A79</th>
+                        <th>Reno11</th>
+                        <th>Quantidade Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-vendedor="Ingrid">
+                        <td>Ingrid</td>
+                        <td class="A58">0</td>
+                        <td class="A79">0</td>
+                        <td class="Reno11">0</td>
+                        <td class="quantity">0</td>
+                    </tr>
+                    <tr data-vendedor="João">
+                        <td>João</td>
+                        <td class="A58">0</td>
+                        <td class="A79">0</td>
+                        <td class="Reno11">0</td>
+                        <td class="quantity">0</td>
+                    </tr>
+                    <tr data-vendedor="Sidnei">
+                        <td>Sidnei</td>
+                        <td class="A58">0</td>
+                        <td class="A79">0</td>
+                        <td class="Reno11">0</td>
+                        <td class="quantity">0</td>
+                    </tr>
+                    <tr data-vendedor="Salão">
+                        <td>Salão</td>
+                        <td class="A58">0</td>
+                        <td class="A79">0</td>
+                        <td class="Reno11">0</td>
+                        <td class="quantity">0</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Total</th>
+                        <th id="totalA58">0</th>
+                        <th id="totalA79">0</th>
+                        <th id="totalReno11">0</th>
+                        <th id="totalQuantity">0</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- Formulário para Adicionar e Remover Vendas -->
+        <div class="form-container">
+            <div class="form-group">
+                <label for="vendedor">Vendedor:</label>
+                <select id="vendedor">
+                    <option value="Ingrid">Ingrid</option>
+                    <option value="João">João</option>
+                    <option value="Sidnei">Sidnei</option>
+                    <option value="Salão">Salão</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <select id="telefone">
+                    <option value="A58">A58</option>
+                    <option value="A79">A79</option>
+                    <option value="Reno11">Reno11</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" value="" min="0">
+            </div>
+            <div class="form-group">
+                <button onclick="addSale()">Adicionar Venda</button>
+                <button onclick="removeSale()">Remover Venda</button>
+            </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="button-container">
+            <button onclick="clearTable()">Limpar Tabela</button>
+            <button onclick="shareReport()">Compartilhar via WhatsApp</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

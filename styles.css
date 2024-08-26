@@ -1,0 +1,112 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Cor de fundo da página */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.excel-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Altura total da viewport */
+    padding: 20px;
+    background-color: #e0e0e0; /* Cor de fundo do container */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da altura */
+}
+
+.table-container {
+    flex: 1;
+    margin-bottom: 20px;
+    overflow-y: auto; /* Permite rolagem se a tabela for maior que o container */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #b0b0b0; /* Cor das bordas das células */
+    padding: 8px;
+    text-align: center;
+    background-color: #ffffff; /* Cor de fundo das células */
+}
+
+thead {
+    background-color: #d0d0d0; /* Cor de fundo do cabeçalho da tabela */
+}
+
+tfoot th {
+    background-color: #c0c0c0; /* Cor de fundo do rodapé da tabela */
+    font-weight: bold;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Cor do texto dos labels */
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #b0b0b0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura */
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto; /* Alinha os botões ao fundo do container */
+}
+
+.button-container button {
+    background-color: #6c757d; /* Cor de fundo dos botões */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+    max-width: 150px;
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura */
+}
+
+.button-container button:hover {
+    background-color: #5a6268; /* Cor de fundo dos botões ao passar o mouse */
+}
+
+.result-highlight {
+    background-color: #d9d9d9; /* Destaque para os resultados */
+}
+
+input[type=number] {
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    table {
+        font-size: 14px;
+    }
+
+    .form-group label, .form-group input, .form-group select {
+        font-size: 14px;
+    }
+}
