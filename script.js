@@ -1,3 +1,4 @@
+// Função para atualizar os totais na tabela
 function updateTotal() {
     let totalA58 = 0;
     let totalA79 = 0;
@@ -24,6 +25,7 @@ function updateTotal() {
     document.getElementById('totalQuantity').textContent = totalQuantity;
 }
 
+// Função para adicionar uma venda
 function addSale() {
     const vendedor = document.getElementById('vendedor').value;
     const telefone = document.getElementById('telefone').value;
@@ -40,6 +42,7 @@ function addSale() {
     saveData();
 }
 
+// Função para remover uma venda
 function removeSale() {
     const vendedor = document.getElementById('vendedor').value;
     const telefone = document.getElementById('telefone').value;
@@ -56,12 +59,14 @@ function removeSale() {
     saveData();
 }
 
+// Função para limpar a tabela
 function clearTable() {
     document.querySelectorAll('.A58, .A79, .Reno11').forEach(td => td.textContent = '0');
     updateTotal();
     saveData();
 }
 
+// Função para compartilhar o relatório via WhatsApp
 function shareReport() {
     const table = document.getElementById('salesTable');
     const rows = table.querySelectorAll('tbody tr');
@@ -85,13 +90,14 @@ function shareReport() {
     // Codificando o texto do relatório para a URL
     const encodedReport = encodeURIComponent(report);
 
-    // Criando uma URL para compartilhamento via WhatsApp com o número específico
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=5521993872264&text=${encodedReport}`;
+    // Criando uma URL para compartilhamento via WhatsApp sem número específico
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodedReport}`;
 
     // Abrindo a URL em uma nova janela
     window.open(whatsappUrl, '_blank');
 }
 
+// Função para salvar os dados no localStorage
 function saveData() {
     const data = [];
     const rows = document.querySelectorAll('tbody tr');
@@ -106,6 +112,7 @@ function saveData() {
     localStorage.setItem('salesData', JSON.stringify(data));
 }
 
+// Função para carregar os dados do localStorage
 function loadData() {
     const savedData = localStorage.getItem('salesData');
     if (savedData) {
@@ -123,4 +130,5 @@ function loadData() {
     }
 }
 
+// Carregar dados ao carregar a página
 window.onload = loadData;
